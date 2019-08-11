@@ -7,9 +7,8 @@
 //
 
 import Foundation
+import Alamofire
 
-protocol RequestGetFeedsFactory {
-	
-	func getFeeds(completed: @escaping (ResponseResult<[AppleFeed]>) -> Void)
-	
+protocol AbstractRequest {
+	func request(completed: @escaping (Result<Data?>) -> Void)
 }

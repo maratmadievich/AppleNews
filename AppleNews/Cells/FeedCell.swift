@@ -9,20 +9,26 @@
 import UIKit
 
 protocol FeedCell {
-	func configure(with feed: AppleFeed)
+	func setDate(text: String)
+	func setTitle(text: String)
+	func setDescription(text: String)
 }
 class FeedCellImpl: UITableViewCell, FeedCell {
 	
 	@IBOutlet weak var labelTitle: UILabel!
 	@IBOutlet weak var labelDate: UILabel!
 	@IBOutlet weak var labelDescription: UILabel!
-
-	func configure(with feed: AppleFeed) {
-		labelTitle.text = feed.title
-		labelDate.text = feed.date
-		labelDescription.text = feed.description
-	}
-
 	
-
+	func setDate(text: String) {
+		labelTitle.text = text
+	}
+	
+	func setTitle(text: String) {
+		labelDate.text = text
+	}
+	
+	func setDescription(text: String) {
+		labelDescription.text = text
+	}
+	
 }

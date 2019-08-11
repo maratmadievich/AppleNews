@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol AbstractFeedParser {
-	func parseFeeds(from data: Data) -> [AppleFeed]
+protocol AbstractFeedsParser {
+	func parseFeeds(from data: Data, completed: @escaping([AppleFeed]) -> ())
 }

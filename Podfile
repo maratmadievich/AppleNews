@@ -7,7 +7,9 @@ target 'AppleNews' do
 
   # Pods for AppleNews
 
-pod 'Alamofire'
+	pod 'Alamofire'
+	pod 'Kanna', '~> 4.0.0'
+
   target 'AppleNewsTests' do
     inherit! :search_paths
     # Pods for testing

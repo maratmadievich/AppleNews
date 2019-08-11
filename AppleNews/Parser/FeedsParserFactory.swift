@@ -8,9 +8,13 @@
 
 import Foundation
 
-class FeedParserFactory {
+class FeedsParserFactory {
 	
-	func makeFeedParser() -> AbstractFeedParser {
-		return FeedParser()
+	func makeFeedsParser() -> AbstractFeedsParser {
+		return FeedsParser()
+	}
+	
+	func makeFeedParser() -> AbstractHtmlParser {
+		return HtmlParser()
 	}
 }

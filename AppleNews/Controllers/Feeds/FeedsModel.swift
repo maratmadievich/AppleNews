@@ -21,6 +21,8 @@ class FeedsModelImpl: NSObject, FeedsModel {
 	internal weak var presenter: FeedsPresenter?
 	
 	private var feeds: [AppleFeed] = []
+	private let requestGetFeeds = RequestFactory().makeGetFeedsRequest()
+	private let feedsParser = FeedsParserFactory().makeFeedsParser()
 	
 	var feedsCount: Int {
 		return feeds.count
@@ -35,21 +37,30 @@ class FeedsModelImpl: NSObject, FeedsModel {
 	}
 	
 	internal func loadFeeds() {
-		let request = RequestFactory().makeGetNewsFactory()
-		request.getFeeds() { [weak self] response in
-			self?.parseFeeds(from: response)
+		requestGetFeeds.request() { [weak self] response in
+			self?.parse(response: response)
 		}
 	}
 	
-	private func parseFeeds(from response: ResponseResult<[AppleFeed]>) {
+	private func parse(response: Result<Data?>) {
 		switch response {
-		case .success(let newFeeds):
-			feeds = newFeeds
-			presenter?.handleShowFeeds()
+		case .success(let feedsData):
+			parseFeeds(from: feedsData)
 		
 		case .failure(let error):
 			print(error.localizedDescription)
-			/// Вставить код по получению данных из CoreData
+		}
+	}
+	
+	private func parseFeeds(from data: Data?) {
+		if let data = data {
+			feedsParser.parseFeeds(from: data) { [weak self] feeds in
+				self?.feeds = feeds
+				self?.presenter?.handleShowFeeds()
+			}
+		} else {
+			feeds.removeAll()
+			presenter?.handleShowFeeds()
 		}
 	}
 
