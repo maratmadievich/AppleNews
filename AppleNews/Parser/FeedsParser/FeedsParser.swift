@@ -8,10 +8,11 @@
 
 import Foundation
 
-class FeedParser: NSObject, AbstractFeedParser {
+class FeedsParser: NSObject, AbstractFeedsParser {
 	
 	private var parser = XMLParser()
 	private var feeds: [AppleFeed] = []
+	private var queue = DispatchQueue.global(qos: .background)
 	
 	let formatter = DateFormatter()
 	let dateFormatInput = "EEE, dd MMM yyyy HH:mm:ss"
@@ -24,18 +25,27 @@ class FeedParser: NSObject, AbstractFeedParser {
 	private var feedDescription = String()
 	
 	private var inElement = false
+	
 
-	internal func parseFeeds(from data: Data) -> [AppleFeed] {
-		feeds.removeAll()
-		parser = XMLParser(data: data)
-		parser.delegate = self
-		parser.parse()
-		return feeds
+	internal func parseFeeds(from data: Data, completed: @escaping([AppleFeed]) -> ()) {
+		queue.sync { [weak self] in
+			self?.feeds.removeAll()
+			self?.parser = XMLParser(data: data)
+			self?.parser.delegate = self
+			self?.parser.parse()
+			DispatchQueue.main.async { [weak self] in
+				guard let feeds = self?.feeds else {
+					completed([])
+					return
+				}
+				completed(feeds)
+			}
+		}
 	}
 	
 }
 
-extension FeedParser: XMLParserDelegate {
+extension FeedsParser: XMLParserDelegate {
 	
 	func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
 		if elementName == "item" {

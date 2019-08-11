@@ -20,19 +20,20 @@
 		841198D222FC26B500187DD3 /* FeedsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198D122FC26B400187DD3 /* FeedsRouter.swift */; };
 		841198D522FC2DBC00187DD3 /* AppleFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198D422FC2DBC00187DD3 /* AppleFeed.swift */; };
 		841198D822FC2E8D00187DD3 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198D722FC2E8D00187DD3 /* RequestFactory.swift */; };
-		841198DB22FC2EE800187DD3 /* RequestGetNewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198DA22FC2EE800187DD3 /* RequestGetNewsFactory.swift */; };
-		841198DD22FC2EF400187DD3 /* RequestGetNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198DC22FC2EF400187DD3 /* RequestGetNews.swift */; };
+		841198DB22FC2EE800187DD3 /* AbstractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198DA22FC2EE800187DD3 /* AbstractRequest.swift */; };
+		841198DD22FC2EF400187DD3 /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198DC22FC2EF400187DD3 /* AlamofireRequest.swift */; };
 		841198ED22FD2D7C00187DD3 /* GetFeedsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198EC22FD2D7C00187DD3 /* GetFeedsTest.swift */; };
-		841198F022FD32CF00187DD3 /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841198EF22FD32CF00187DD3 /* ResponseResult.swift */; };
 		977454ADFDA0CC1D0FC7D756 /* Pods_AppleNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6075D9E9DCED5C026A6D151 /* Pods_AppleNewsTests.framework */; };
 		AA1D5E6722FC4B560001A29D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6622FC4B560001A29D /* FeedCell.swift */; };
-		AA1D5E6A22FC4DBB0001A29D /* AbstractFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6922FC4DBB0001A29D /* AbstractFeedParser.swift */; };
-		AA1D5E6C22FC4E9D0001A29D /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6B22FC4E9D0001A29D /* FeedParser.swift */; };
-		AA1D5E6E22FC50DC0001A29D /* FeedParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6D22FC50DC0001A29D /* FeedParserFactory.swift */; };
+		AA1D5E6A22FC4DBB0001A29D /* AbstractFeedsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6922FC4DBB0001A29D /* AbstractFeedsParser.swift */; };
+		AA1D5E6C22FC4E9D0001A29D /* FeedsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6B22FC4E9D0001A29D /* FeedsParser.swift */; };
+		AA1D5E6E22FC50DC0001A29D /* FeedsParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E6D22FC50DC0001A29D /* FeedsParserFactory.swift */; };
 		AA1D5E7122FC79BB0001A29D /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E7022FC79BB0001A29D /* FeedDetailViewController.swift */; };
 		AA1D5E7322FC7A340001A29D /* FeedDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E7222FC7A340001A29D /* FeedDetailPresenter.swift */; };
 		AA1D5E7522FC7A400001A29D /* FeedDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E7422FC7A400001A29D /* FeedDetailModel.swift */; };
 		AA1D5E7722FC7A4F0001A29D /* FeedDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D5E7622FC7A4F0001A29D /* FeedDetailConfigurator.swift */; };
+		AA4A42F723002E7700B3CBE9 /* AbstractHtmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A42F623002E7700B3CBE9 /* AbstractHtmlParser.swift */; };
+		AA4A42F923002E9C00B3CBE9 /* HtmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A42F823002E9C00B3CBE9 /* HtmlParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,20 +64,21 @@
 		841198D122FC26B400187DD3 /* FeedsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsRouter.swift; sourceTree = "<group>"; };
 		841198D422FC2DBC00187DD3 /* AppleFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFeed.swift; sourceTree = "<group>"; };
 		841198D722FC2E8D00187DD3 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
-		841198DA22FC2EE800187DD3 /* RequestGetNewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGetNewsFactory.swift; sourceTree = "<group>"; };
-		841198DC22FC2EF400187DD3 /* RequestGetNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGetNews.swift; sourceTree = "<group>"; };
+		841198DA22FC2EE800187DD3 /* AbstractRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequest.swift; sourceTree = "<group>"; };
+		841198DC22FC2EF400187DD3 /* AlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
 		841198E222FD2D5300187DD3 /* AppleNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841198E622FD2D5400187DD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841198EC22FD2D7C00187DD3 /* GetFeedsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedsTest.swift; sourceTree = "<group>"; };
-		841198EF22FD32CF00187DD3 /* ResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
 		AA1D5E6622FC4B560001A29D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		AA1D5E6922FC4DBB0001A29D /* AbstractFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFeedParser.swift; sourceTree = "<group>"; };
-		AA1D5E6B22FC4E9D0001A29D /* FeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
-		AA1D5E6D22FC50DC0001A29D /* FeedParserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParserFactory.swift; sourceTree = "<group>"; };
+		AA1D5E6922FC4DBB0001A29D /* AbstractFeedsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFeedsParser.swift; sourceTree = "<group>"; };
+		AA1D5E6B22FC4E9D0001A29D /* FeedsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsParser.swift; sourceTree = "<group>"; };
+		AA1D5E6D22FC50DC0001A29D /* FeedsParserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsParserFactory.swift; sourceTree = "<group>"; };
 		AA1D5E7022FC79BB0001A29D /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		AA1D5E7222FC7A340001A29D /* FeedDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailPresenter.swift; sourceTree = "<group>"; };
 		AA1D5E7422FC7A400001A29D /* FeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModel.swift; sourceTree = "<group>"; };
 		AA1D5E7622FC7A4F0001A29D /* FeedDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailConfigurator.swift; sourceTree = "<group>"; };
+		AA4A42F623002E7700B3CBE9 /* AbstractHtmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractHtmlParser.swift; sourceTree = "<group>"; };
+		AA4A42F823002E9C00B3CBE9 /* HtmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlParser.swift; sourceTree = "<group>"; };
 		AA59AD6C0EFA233157BD0D12 /* Pods_AppleNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppleNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6075D9E9DCED5C026A6D151 /* Pods_AppleNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppleNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2028CFB0C09F6E05597057 /* Pods-AppleNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-AppleNewsTests/Pods-AppleNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,7 +131,7 @@
 				841198C722FC263600187DD3 /* Controllers */,
 				841198D322FC2D9900187DD3 /* Entities */,
 				841198D622FC2E6100187DD3 /* Requests */,
-				AA1D5E6822FC4D8F0001A29D /* FeedParser */,
+				AA1D5E6822FC4D8F0001A29D /* Parser */,
 				841198F122FD37A800187DD3 /* Storyboards */,
 				841198B222FC255C00187DD3 /* AppDelegate.swift */,
 				841198BC22FC256E00187DD3 /* Assets.xcassets */,
@@ -171,20 +173,11 @@
 		841198D622FC2E6100187DD3 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				841198D922FC2EC000187DD3 /* GetFeeds */,
+				841198DC22FC2EF400187DD3 /* AlamofireRequest.swift */,
+				841198DA22FC2EE800187DD3 /* AbstractRequest.swift */,
 				841198D722FC2E8D00187DD3 /* RequestFactory.swift */,
-				841198EF22FD32CF00187DD3 /* ResponseResult.swift */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		841198D922FC2EC000187DD3 /* GetFeeds */ = {
-			isa = PBXGroup;
-			children = (
-				841198DC22FC2EF400187DD3 /* RequestGetNews.swift */,
-				841198DA22FC2EE800187DD3 /* RequestGetNewsFactory.swift */,
-			);
-			path = GetFeeds;
 			sourceTree = "<group>";
 		};
 		841198E322FD2D5400187DD3 /* AppleNewsTests */ = {
@@ -221,14 +214,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		AA1D5E6822FC4D8F0001A29D /* FeedParser */ = {
+		AA1D5E6822FC4D8F0001A29D /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				AA1D5E6922FC4DBB0001A29D /* AbstractFeedParser.swift */,
-				AA1D5E6B22FC4E9D0001A29D /* FeedParser.swift */,
-				AA1D5E6D22FC50DC0001A29D /* FeedParserFactory.swift */,
+				AA4A42F523002E5300B3CBE9 /* HtmlParser */,
+				AA4A42F423002E3D00B3CBE9 /* FeedsParser */,
+				AA1D5E6D22FC50DC0001A29D /* FeedsParserFactory.swift */,
 			);
-			path = FeedParser;
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		AA1D5E6F22FC79360001A29D /* FeedDetail */ = {
@@ -240,6 +233,24 @@
 				AA1D5E7622FC7A4F0001A29D /* FeedDetailConfigurator.swift */,
 			);
 			path = FeedDetail;
+			sourceTree = "<group>";
+		};
+		AA4A42F423002E3D00B3CBE9 /* FeedsParser */ = {
+			isa = PBXGroup;
+			children = (
+				AA1D5E6922FC4DBB0001A29D /* AbstractFeedsParser.swift */,
+				AA1D5E6B22FC4E9D0001A29D /* FeedsParser.swift */,
+			);
+			path = FeedsParser;
+			sourceTree = "<group>";
+		};
+		AA4A42F523002E5300B3CBE9 /* HtmlParser */ = {
+			isa = PBXGroup;
+			children = (
+				AA4A42F623002E7700B3CBE9 /* AbstractHtmlParser.swift */,
+				AA4A42F823002E9C00B3CBE9 /* HtmlParser.swift */,
+			);
+			path = HtmlParser;
 			sourceTree = "<group>";
 		};
 		C340109AD70BC8F38500D8D2 /* Frameworks */ = {
@@ -372,12 +383,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AppleNews/Pods-AppleNews-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,26 +448,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1D5E6A22FC4DBB0001A29D /* AbstractFeedParser.swift in Sources */,
+				AA1D5E6A22FC4DBB0001A29D /* AbstractFeedsParser.swift in Sources */,
 				841198CE22FC269200187DD3 /* FeedsModel.swift in Sources */,
 				AA1D5E6722FC4B560001A29D /* FeedCell.swift in Sources */,
-				841198DD22FC2EF400187DD3 /* RequestGetNews.swift in Sources */,
+				841198DD22FC2EF400187DD3 /* AlamofireRequest.swift in Sources */,
 				841198D222FC26B500187DD3 /* FeedsRouter.swift in Sources */,
+				AA4A42F923002E9C00B3CBE9 /* HtmlParser.swift in Sources */,
 				AA1D5E7322FC7A340001A29D /* FeedDetailPresenter.swift in Sources */,
 				841198B322FC255C00187DD3 /* AppDelegate.swift in Sources */,
 				841198CC22FC268200187DD3 /* FeedsPresenter.swift in Sources */,
 				AA1D5E7722FC7A4F0001A29D /* FeedDetailConfigurator.swift in Sources */,
-				841198DB22FC2EE800187DD3 /* RequestGetNewsFactory.swift in Sources */,
+				841198DB22FC2EE800187DD3 /* AbstractRequest.swift in Sources */,
 				AA1D5E7522FC7A400001A29D /* FeedDetailModel.swift in Sources */,
-				841198F022FD32CF00187DD3 /* ResponseResult.swift in Sources */,
 				841198BB22FC255C00187DD3 /* AppleNews.xcdatamodeld in Sources */,
 				841198D822FC2E8D00187DD3 /* RequestFactory.swift in Sources */,
+				AA4A42F723002E7700B3CBE9 /* AbstractHtmlParser.swift in Sources */,
 				AA1D5E7122FC79BB0001A29D /* FeedDetailViewController.swift in Sources */,
-				AA1D5E6E22FC50DC0001A29D /* FeedParserFactory.swift in Sources */,
+				AA1D5E6E22FC50DC0001A29D /* FeedsParserFactory.swift in Sources */,
 				841198D022FC26AA00187DD3 /* FeedsConfigurator.swift in Sources */,
 				841198D522FC2DBC00187DD3 /* AppleFeed.swift in Sources */,
 				841198CA22FC266E00187DD3 /* FeedsViewController.swift in Sources */,
-				AA1D5E6C22FC4E9D0001A29D /* FeedParser.swift in Sources */,
+				AA1D5E6C22FC4E9D0001A29D /* FeedsParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B698DTREGH;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = AppleNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,7 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B698DTREGH;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = AppleNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,7 +670,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B698DTREGH;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = AppleNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -677,7 +691,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B698DTREGH;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = AppleNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

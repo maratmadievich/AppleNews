@@ -23,6 +23,7 @@ class FeedDetailConfiguratorImpl: FeedDetailConfigurator {
 	func configure(view: FeedDetailViewController) {
 		let model = FeedDetailModelImpl(with: link)
 		let presenter = FeedDetailPresenterImpl(view: view, model: model)
+		model.presenter = presenter
 		view.presenter = presenter
 	}
 	

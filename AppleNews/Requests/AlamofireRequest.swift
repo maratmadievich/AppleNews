@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class RequestGetFeeds {
+class AlamofireRequest {
 	public let urlString: String
 	public let method: HTTPMethod
 	public let methodDescription: String
@@ -22,20 +22,15 @@ class RequestGetFeeds {
 	
 }
 
-extension RequestGetFeeds: RequestGetFeedsFactory {
+extension AlamofireRequest: AbstractRequest {
 	
-	func getFeeds(completed: @escaping (ResponseResult<[AppleFeed]>) -> Void) {
+	func request(completed: @escaping (Result<Data?>) -> Void) {
 		Alamofire.request(urlString, method: method, parameters: nil)
 			.response { response in
-				if let data = response.data {
-					let feedParser = FeedParserFactory().makeFeedParser()
-					completed(ResponseResult.success(feedParser.parseFeeds(from: data)))
-				}
-				else if let error = response.error {
-					completed(ResponseResult.failure(error))
-				}
-				else {
-					completed(ResponseResult.success([]))
+				if let error = response.error {
+					completed(Result.failure(error))
+				} else {
+					completed(Result.success(response.data))
 				}
 		}
 	}

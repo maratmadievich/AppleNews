@@ -40,10 +40,10 @@ class FeedsViewController: UIViewController {
 		presenter.loadFeeds()
 	}
 	
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		presenter.prepare(for: segue, sender: sender)
 	}
+	
 }
 
 extension FeedsViewController: FeedsView {
@@ -52,6 +52,7 @@ extension FeedsViewController: FeedsView {
 		refreshControl.endRefreshing()
 		tableView.reloadData()
 	}
+	
 }
 
 extension FeedsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,7 +63,7 @@ extension FeedsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCellImpl else { return UITableViewCell() }
-		cell.configure(with: presenter.getFeed(from: indexPath.row))
+		presenter.configure(cell: cell, from: indexPath.row)
 		return cell
 	}
 	
@@ -70,7 +71,5 @@ extension FeedsViewController: UITableViewDelegate, UITableViewDataSource {
 		tableView.deselectRow(at: indexPath, animated: true)
 		presenter.select(row: indexPath.row)
 	}
-	
-	
 	
 }

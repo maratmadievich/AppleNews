@@ -102,10 +102,27 @@
                     <view key="view" contentMode="scaleToFill" id="bgz-L8-NSf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oob-eN-FvV">
+                                <rect key="frame" x="20" y="84" width="335" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K6q-oU-Kut" firstAttribute="bottom" secondItem="oob-eN-FvV" secondAttribute="bottom" constant="20" id="5Fw-C9-KCo"/>
+                            <constraint firstItem="oob-eN-FvV" firstAttribute="top" secondItem="K6q-oU-Kut" secondAttribute="top" constant="20" id="KuQ-HV-Shn"/>
+                            <constraint firstItem="oob-eN-FvV" firstAttribute="leading" secondItem="K6q-oU-Kut" secondAttribute="leading" constant="20" id="gXO-gj-T6X"/>
+                            <constraint firstItem="K6q-oU-Kut" firstAttribute="trailing" secondItem="oob-eN-FvV" secondAttribute="trailing" constant="20" id="spm-Ep-9Eg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K6q-oU-Kut"/>
                     </view>
                     <navigationItem key="navigationItem" title="Подробнее" id="cO4-jt-5kp"/>
+                    <connections>
+                        <outlet property="textView" destination="oob-eN-FvV" id="emW-WY-eA5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPQ-Qh-Gsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

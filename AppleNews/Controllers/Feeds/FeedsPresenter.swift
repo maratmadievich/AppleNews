@@ -14,7 +14,7 @@ protocol FeedsPresenter: class {
 	func loadFeeds()
 	func select(row: Int)
 	func handleShowFeeds()
-	func getFeed(from row: Int) -> AppleFeed
+	func configure(cell: FeedCell, from row: Int)
 	
 	func prepare(for segue: UIStoryboardSegue, sender: Any?)
 }
@@ -50,8 +50,12 @@ class FeedsPresenterImpl: FeedsPresenter {
 		view.reloadFeeds()
 	}
 	
-	internal func getFeed(from row: Int) -> AppleFeed  {
-		return model.getFeed(from: row)
+	/// Возможно не нужно копировать значение из модели
+	internal func configure(cell: FeedCell, from row: Int) {
+		let feed = model.getFeed(from: row)
+		cell.setDate(text: feed.date)
+		cell.setTitle(text: feed.title)
+		cell.setDescription(text: feed.description)
 	}
 	
 	internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {

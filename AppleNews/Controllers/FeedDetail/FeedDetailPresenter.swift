@@ -10,7 +10,8 @@ import UIKit
 
 protocol FeedDetailPresenter: class {
 	init(view: FeedDetailView, model: FeedDetailModel)
-	func completeConfigureWebView()
+	func handleGet(error: String)
+	func handleGet(feedDetail: String)
 }
 
 class FeedDetailPresenterImpl: FeedDetailPresenter {
@@ -23,13 +24,12 @@ class FeedDetailPresenterImpl: FeedDetailPresenter {
 		self.model = model
 	}
 	
-	internal func completeConfigureWebView() {
-		guard let urlRequest = model.getUrlRequest() else {
-			view?.show(error: "Нет ссылки")
-			return
-		}
-		view?.show(urlRequest: urlRequest)
-		
+	internal func handleGet(error: String) {
+		view?.show(error: error)
+	}
+	
+	internal func handleGet(feedDetail: String) {
+		view?.show(feedDetail: feedDetail)
 	}
 	
 }
